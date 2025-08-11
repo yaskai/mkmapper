@@ -1,0 +1,5 @@
+#OPTIONS
+refresh_rate=100
+window_width=1920
+window_height=1080
+gui_style=1
