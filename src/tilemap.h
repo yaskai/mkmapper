@@ -41,7 +41,7 @@ typedef struct {
 
 	Camera2D *camera;
 
-	unsigned char *type, *data;
+	unsigned char *type, *data, *debug;
 
 	Action *actions;
 } Tilemap;
@@ -60,7 +60,9 @@ void RedoAction(Action *action, Tilemap *tilemap);
 void TilemapDrawGrid(Tilemap *tilemap);
 void TilemapDraw(Tilemap *tilemap, Spritesheet *ss);
 
+uint8_t TileGetAdj(Coords pos, Tilemap *tilemap);
 void UpdateTileSprites(Tilemap *tilemap);
+void UpdateTileSpritesRec(Coords pos, Coords size, Tilemap *tilemap);
 void DrawBitmaskTile(Coords coords, Spritesheet *ss, Tilemap *tilemap);
 
 void TilemapDrawDebugInfo(Tilemap *tilemap);

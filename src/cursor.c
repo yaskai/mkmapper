@@ -45,10 +45,11 @@ void CursorUpdate(Cursor *cursor, float delta_time) {
 
 	CursorCamControls(cursor, delta_time);
 		
-	cursor->grid_pos = (Coords) {
-		cursor->world_pos.x / cursor->tilemap->tile_size,
-		cursor->world_pos.y / cursor->tilemap->tile_size
-	};
+	if(cursor->world_pos.x >= 0) 
+		cursor->grid_pos.c = cursor->world_pos.x / cursor->tilemap->tile_size;
+
+	if(cursor->world_pos.y >= 0) 
+		cursor->grid_pos.r = cursor->world_pos.y / cursor->tilemap->tile_size;
 
 	uint32_t grid_index = GridToIndex(cursor->grid_pos, cursor->tilemap->cols);
 
@@ -106,22 +107,22 @@ void CursorDraw(Cursor *cursor) {
 }
 
 void CursorDrawIcon(Cursor *cursor) {
-	Vector2 pos = cursor->screen_pos;
+	Vector2 pos = Vector2Subtract(cursor->screen_pos, (Vector2){24, 24});
 
 	if(cursor->flags & PAN_MODE) 
-		GuiDrawIcon(ICON_CURSOR_HAND, pos.x, pos.y, 2, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
+		GuiDrawIcon(ICON_CURSOR_HAND, pos.x, pos.y, 3, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
 	else if(cursor->flags & UI_LOCK)
-		GuiDrawIcon(ICON_CURSOR_CLASSIC, pos.x, pos.y, 2, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
+		GuiDrawIcon(ICON_CURSOR_CLASSIC, pos.x, pos.y, 3, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
 	else 
 		switch(cursor->tool) {
 			case PENCIL:
-				GuiDrawIcon(ICON_PENCIL_BIG, pos.x, pos.y, 2, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
+				GuiDrawIcon(ICON_PENCIL_BIG, pos.x, pos.y, 3, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
 				break;
 			case ERASER:
-				GuiDrawIcon(ICON_RUBBER, pos.x, pos.y, 2, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
+				GuiDrawIcon(ICON_RUBBER, pos.x, pos.y, 3, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
 				break;
 			case SELECT:
-				GuiDrawIcon(ICON_CURSOR_CLASSIC, pos.x, pos.y, 2, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
+				GuiDrawIcon(ICON_CURSOR_CLASSIC, pos.x, pos.y, 3, GetColor(GuiGetStyle(DEFAULT, TEXT_COLOR_PRESSED)));
 				break;
 		}
 }
@@ -187,14 +188,14 @@ void CopySelection(Cursor *cursor) {
 
 void PasteSelection(Cursor *cursor) {
 	Tilemap *map = cursor->tilemap;	
-	uint32_t tile_count = cursor->box_size.c * cursor->box_size.r;
+	uint32_t tile_count = cursor->cb_size.c * cursor->cb_size.r;
 
-	Action paste = MakeAction(cursor->grid_pos, cursor->box_size, (Coords){map->cols, map->rows}, map);
+	Action paste = MakeAction(cursor->grid_pos, cursor->cb_size, (Coords){map->cols, map->rows}, map);
 
 	char prev_buf[tile_count], curr_buf[tile_count];
 		
 	for(uint32_t i = 0; i < tile_count; i++) {
-		Coords box_coords = IndexToGrid(i, cursor->box_size.c);
+		Coords box_coords = IndexToGrid(i, cursor->cb_size.c);
 
 		prev_buf[i] = FetchTileKey(CoordsAdd(cursor->grid_pos, box_coords), map);
 		curr_buf[i] = cursor->clipboard[i];

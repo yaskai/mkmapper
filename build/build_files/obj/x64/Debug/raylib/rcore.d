@@ -1,7 +1,7 @@
 obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
  /usr/include/stdc-predef.h ../external/raylib-master/src/raylib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  ../external/raylib-master/src/config.h \
  ../external/raylib-master/src/utils.h /usr/include/stdlib.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
@@ -9,7 +9,7 @@ obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
  /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
  /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
@@ -44,21 +44,21 @@ obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h ../external/raylib-master/src/rlgl.h \
  ../external/raylib-master/src/external/glad.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
  ../external/raylib-master/src/raymath.h \
  ../external/raylib-master/src/rgestures.h \
  ../external/raylib-master/src/rcamera.h \
  ../external/raylib-master/src/external/msf_gif.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/emmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mm_malloc.h \
  ../external/raylib-master/src/external/sinfl.h /usr/include/assert.h \
  ../external/raylib-master/src/external/sdefl.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
@@ -92,8 +92,8 @@ obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
  /usr/include/X11/extensions/render.h /usr/include/X11/Xdefs.h
 /usr/include/stdc-predef.h:
 ../external/raylib-master/src/raylib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h:
 ../external/raylib-master/src/config.h:
 ../external/raylib-master/src/utils.h:
 /usr/include/stdlib.h:
@@ -106,7 +106,7 @@ obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
 /usr/include/bits/long-double.h:
 /usr/include/gnu/stubs.h:
 /usr/include/gnu/stubs-64.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 /usr/include/bits/waitflags.h:
 /usr/include/bits/waitstatus.h:
 /usr/include/bits/floatn.h:
@@ -170,7 +170,7 @@ obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
 /usr/include/bits/iscanonical.h:
 ../external/raylib-master/src/rlgl.h:
 ../external/raylib-master/src/external/glad.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/wchar.h:
 /usr/include/bits/stdint-uintn.h:
@@ -179,15 +179,15 @@ obj/x64/Debug/raylib/rcore.o: ../external/raylib-master/src/rcore.c \
 ../external/raylib-master/src/rgestures.h:
 ../external/raylib-master/src/rcamera.h:
 ../external/raylib-master/src/external/msf_gif.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/emmintrin.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xmmintrin.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mmintrin.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mm_malloc.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/emmintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mmintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mm_malloc.h:
 ../external/raylib-master/src/external/sinfl.h:
 /usr/include/assert.h:
 ../external/raylib-master/src/external/sdefl.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h:
 /usr/include/limits.h:
 /usr/include/bits/posix1_lim.h:
 /usr/include/bits/local_lim.h:

@@ -1,7 +1,7 @@
 obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
  /usr/include/stdc-predef.h ../external/raylib-master/src/raylib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  ../external/raylib-master/src/config.h \
  ../external/raylib-master/src/utils.h \
  ../external/raylib-master/src/rlgl.h \
@@ -19,7 +19,7 @@ obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
@@ -49,17 +49,17 @@ obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h \
  ../external/raylib-master/src/external/cgltf.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/float.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/float.h \
  ../external/raylib-master/src/external/vox_loader.h \
  ../external/raylib-master/src/external/m3d.h \
  ../external/raylib-master/src/external/par_shapes.h \
@@ -69,8 +69,8 @@ obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
  /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h
 /usr/include/stdc-predef.h:
 ../external/raylib-master/src/raylib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h:
 ../external/raylib-master/src/config.h:
 ../external/raylib-master/src/utils.h:
 ../external/raylib-master/src/rlgl.h:
@@ -101,7 +101,7 @@ obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
 /usr/include/bits/mathcalls-narrow.h:
 /usr/include/bits/iscanonical.h:
 /usr/include/stdio.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 /usr/include/bits/types/__fpos_t.h:
 /usr/include/bits/types/__mbstate_t.h:
 /usr/include/bits/types/__fpos64_t.h:
@@ -152,13 +152,13 @@ obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
 /usr/include/asm-generic/errno-base.h:
 /usr/include/bits/types/error_t.h:
 ../external/raylib-master/src/external/cgltf.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/wchar.h:
 /usr/include/bits/stdint-uintn.h:
 /usr/include/bits/stdint-least.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h:
 /usr/include/limits.h:
 /usr/include/bits/posix1_lim.h:
 /usr/include/bits/local_lim.h:
@@ -167,7 +167,7 @@ obj/x64/Debug/raylib/rmodels.o: ../external/raylib-master/src/rmodels.c \
 /usr/include/bits/posix2_lim.h:
 /usr/include/bits/xopen_lim.h:
 /usr/include/bits/uio_lim.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/float.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/float.h:
 ../external/raylib-master/src/external/vox_loader.h:
 ../external/raylib-master/src/external/m3d.h:
 ../external/raylib-master/src/external/par_shapes.h:

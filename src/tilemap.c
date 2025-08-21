@@ -50,6 +50,9 @@ void TilemapInit(Tilemap *tilemap, Coords size, Camera2D *camera) {
 	tilemap->data = (unsigned char*)malloc(tilemap->tile_count);
 	memset(tilemap->data, 0, tilemap->tile_count);
 
+	tilemap->debug = (unsigned char*)malloc(tilemap->tile_count);
+	memset(tilemap->debug, 0, tilemap->tile_count);
+
 	tilemap->action_count = 0, tilemap->curr_action = 0, tilemap->action_cap = 2;
 	tilemap->actions = (Action*)malloc(sizeof(Action) * tilemap->action_cap); 
 }
@@ -92,7 +95,8 @@ void ApplyAction(Action *action, Tilemap *tilemap) {
 	}
 
 	tilemap->actions[tilemap->curr_action] = *action;
-	UpdateTileSprites(tilemap);
+	//UpdateTileSprites(tilemap);
+	UpdateTileSpritesRec(action->position, action->size, tilemap);
 }
 
 void UndoAction(Action *action, Tilemap *tilemap) {
@@ -106,7 +110,8 @@ void UndoAction(Action *action, Tilemap *tilemap) {
 	}
 
 	tilemap->curr_action--;
-	UpdateTileSprites(tilemap);
+	//UpdateTileSprites(tilemap);
+	UpdateTileSpritesRec(action->position, action->size, tilemap);
 }
 
 void RedoAction(Action *action, Tilemap *tilemap) {
@@ -120,7 +125,8 @@ void RedoAction(Action *action, Tilemap *tilemap) {
 	}
 
 	tilemap->curr_action++;
-	UpdateTileSprites(tilemap);
+	//UpdateTileSprites(tilemap);
+	UpdateTileSpritesRec(action->position, action->size, tilemap);
 }
 
 void TilemapDrawGrid(Tilemap *tilemap) {
@@ -140,7 +146,27 @@ void TilemapDraw(Tilemap *tilemap, Spritesheet *ss) {
 		switch(tilemap->type[i]) {
 			case '1': DrawBitmaskTile(IndexToGrid(i, tilemap->cols), ss, tilemap);
 		}
+
+		/*
+		if(tilemap->debug[i] != 0) TilePaint(IndexToGrid(i, tilemap->cols), ColorAlpha(ORANGE, 0.5f), tilemap);
+		Coords pos = IndexToGrid(i, tilemap->cols);
+		DrawText(TextFormat("%d", tilemap->data[i]), pos.c * tilemap->tile_size, pos.r * tilemap->tile_size, 10, RAYWHITE);
+		*/
 	}
+}
+
+uint8_t TileGetAdj(Coords pos, Tilemap *tilemap) {
+	uint8_t adj = 0;
+
+	for(uint8_t d = 0; d < 4; d++) {
+		Coords check = {pos.c + dirs[d].dx, pos.r + dirs[d].dy};
+		if(!InBounds(check, tilemap)) continue;
+
+		uint32_t ni = GridToIndex(check, tilemap->cols);
+		if(tilemap->type[ni] == '1') adj |= (1 << d);
+	}
+
+	return adj;
 }
 
 void UpdateTileSprites(Tilemap *tilemap) {
@@ -160,8 +186,27 @@ void UpdateTileSprites(Tilemap *tilemap) {
 	}
 }
 
+void UpdateTileSpritesRec(Coords pos, Coords size, Tilemap *tilemap) {
+	uint32_t start_col = pos.c - 1, start_row = pos.r - 1;
+	if(start_col > pos.c) start_col = 0; 
+	if(start_row > pos.r) start_row = 0;
+	
+	uint32_t end_col = pos.c + size.c + 1, end_row = pos.r + size.r + 1;
+	if(end_col > tilemap->cols) end_col = tilemap->cols;
+	if(end_row > tilemap->rows) end_row = tilemap->rows;
+
+	for(uint32_t r = start_row; r < end_row; r++) {
+		for(uint32_t c = start_col; c < end_col; c++) {
+			Coords coords = {c, r};
+			uint32_t id = GridToIndex(coords, tilemap->cols);
+
+			if(tilemap->type[id] != '1') continue;
+			tilemap->data[id] = TileGetAdj(coords, tilemap);
+		}
+	}
+}
+
 void DrawBitmaskTile(Coords coords, Spritesheet *ss, Tilemap *tilemap) {
-	//DrawRectangleRec(TileRec(coords, tilemap), BLUE);
 	DrawSprite(ss, tilemap->data[GridToIndex(coords, tilemap->cols)], (Vector2){coords.c * tilemap->tile_size, coords.r * tilemap->tile_size});
 }
 

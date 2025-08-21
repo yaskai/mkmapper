@@ -1,6 +1,6 @@
 obj/x64/Debug/mkmapper/tilemap.o: ../../src/tilemap.c \
  /usr/include/stdc-predef.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
@@ -10,7 +10,7 @@ obj/x64/Debug/mkmapper/tilemap.o: ../../src/tilemap.c \
  /usr/include/bits/time64.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h /usr/include/stdlib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
@@ -29,17 +29,17 @@ obj/x64/Debug/mkmapper/tilemap.o: ../../src/tilemap.c \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h ../external/raylib-master/src/raylib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  ../../src/tilemap.h ../../src/gridmath.h ../../src/sprites.h \
  ../../src/cursor.h
 /usr/include/stdc-predef.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -58,7 +58,7 @@ obj/x64/Debug/mkmapper/tilemap.o: ../../src/tilemap.c \
 /usr/include/bits/stdint-uintn.h:
 /usr/include/bits/stdint-least.h:
 /usr/include/stdlib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 /usr/include/bits/waitflags.h:
 /usr/include/bits/waitstatus.h:
 /usr/include/bits/floatn.h:
@@ -92,7 +92,7 @@ obj/x64/Debug/mkmapper/tilemap.o: ../../src/tilemap.c \
 /usr/include/string.h:
 /usr/include/strings.h:
 /usr/include/stdio.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
 /usr/include/bits/types/__fpos_t.h:
 /usr/include/bits/types/__mbstate_t.h:
 /usr/include/bits/types/__fpos64_t.h:
@@ -102,7 +102,7 @@ obj/x64/Debug/mkmapper/tilemap.o: ../../src/tilemap.c \
 /usr/include/bits/types/cookie_io_functions_t.h:
 /usr/include/bits/stdio_lim.h:
 ../external/raylib-master/src/raylib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h:
 ../../src/tilemap.h:
 ../../src/gridmath.h:
 ../../src/sprites.h:

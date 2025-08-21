@@ -9,6 +9,9 @@
 #define FILE_DIAG 0x01 
 #define SCROLL_X  0x02
 
+#define DD_COLS 3 
+#define DD_ROWS 8
+
 enum TOOL_RECTS {
 	PENCIL_REC,
 	ERASER_REC,
@@ -46,9 +49,10 @@ typedef struct {
 	Rectangle tool_recs[5];
 	uint8_t tool_icons[5];
 
-	short active_menu;
-	Rectangle menu_recs[3];
-	char *menu_text[3];
+	short active_dd;
+	uint8_t dd_opt_count[3];
+	Rectangle dd_recs[3];
+	char *dd_titles[3][8];
 
 	Scroller scrollers[2];
 } Ui;
@@ -63,9 +67,9 @@ void DrawOutline(Rectangle bounds, float thick, Color color);
 
 void PanelsInit(Ui *gui);
 void ToolsInit(Ui *gui);
-void MenusInit(Ui *gui);
+void DropdownsInit(Ui *gui);
 
 void OnToolClick(uint8_t tool_id, Ui *gui, Cursor *cursor);
-void OnMenuClick(uint8_t menu_id, Ui *gui);
+void OnMenuClick(uint8_t dd_id, Ui *gui);
 
 #endif // !UI_H_

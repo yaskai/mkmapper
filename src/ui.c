@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 #include "raylib.h"
 #include "raymath.h"
@@ -9,6 +10,9 @@
 #include "include/raygui.h"
 #undef RAYGUI_IMPLEMENTATION
 #include "include/styles/style_jungle.h"
+#include "include/styles/style_cyber.h"
+#include "include/styles/style_dark.h"
+#include "include/styles/style_ashes.h"
 
 #include "ui.h"
 #include "cursor.h"
@@ -23,12 +27,11 @@ void GuiInit(Ui *gui, Config *conf) {
 	gui->ww = conf->window_width;
 	gui->wh = conf->window_height;
 
-	// -1 for none active
-	gui->active_menu = -1;
+	gui->active_dd = -1; // -1 for none active
 	
 	PanelsInit(gui);
 	ToolsInit(gui);
-	MenusInit(gui);
+	DropdownsInit(gui);
 
 	Scroller scrollers[2] = {
 		// Horizontal
@@ -68,9 +71,21 @@ void GuiUpdate(Ui *gui, Cursor *cursor) {
 		}
 	}
 
-	// Menu buttons
-	for(uint8_t i = 0; i < 3; i++) {
-		if(GuiButton(gui->menu_recs[i], TextFormat("%s", gui->menu_text[i]))) {
+	// Drowpdown buttons
+	for(uint8_t i = 0; i < DD_COLS; i++) {
+		// Toggle dropdown
+		if(GuiButton(gui->dd_recs[i], TextFormat("%s", gui->dd_titles[i][0])))
+			gui->active_dd = (gui->active_dd == i) ? -1 : i;
+
+		// Show options on active dropdown
+		if(gui->active_dd == i) for(uint8_t n = 1; n < gui->dd_opt_count[i]; n++) {
+			Rectangle btn_rec = (Rectangle){
+				gui->dd_recs[i].x,
+				gui->dd_recs[i].y + (gui->dd_recs[i].height * (n)),
+				gui->dd_recs[i].width, gui->dd_recs[i].height };
+
+			if(GuiButton(btn_rec, TextFormat("%s", gui->dd_titles[i][n]))) {
+			}
 		}
 	}
 
@@ -209,33 +224,34 @@ void ToolsInit(Ui *gui) {
 	memcpy(gui->tool_icons, icons, sizeof(icons));
 }
 
-void MenusInit(Ui *gui) {
+void DropdownsInit(Ui *gui) {
 	Rectangle recs[3] = {
-		{0, 0, 100, 24},
+		{0, 0, 100,   24},
 		{100, 0, 100, 24},
 		{200, 0, 100, 24},
 	};
 
-	char *text[3] = {
-		"FILE",
-		"EDIT",
-		"HELP"
+	// Dropdown titles
+	char *dd_titles[DD_COLS][DD_ROWS] = {
+		{ "file", "open", "save", "", "", "", "", "" },
+		{ "edit", "undo", "redo", "", "", "", "", "" },
+		{ "help", "", "", "", "", "", "", "" 		 },
 	};
 
-	memcpy(gui->menu_recs, recs, sizeof(recs));
-	memcpy(gui->menu_text, text, sizeof(text));
+	memset(gui->dd_opt_count, 0, sizeof(gui->dd_opt_count));
+	for(uint8_t c = 0; c < 3; c++) for(uint8_t r = 0; r < 8; r++) 
+		if(*dd_titles[c][r] != '\0') gui->dd_opt_count[c]++;
+
+	memcpy(gui->dd_recs, recs, sizeof(recs));
+	memcpy(gui->dd_titles, dd_titles, sizeof(dd_titles));
 }
 
 void OnToolClick(uint8_t tool_id, Ui *gui, Cursor *cursor) {
 	switch(tool_id) {
 		case 0: 
-			cursor->tool = PENCIL;
-			break;
 		case 1: 
-			cursor->tool = ERASER;
-			break;
 		case 2: 
-			cursor->tool = SELECT;
+			cursor->tool = tool_id;
 			break;
 		case 3: 
 			UndoAction(&cursor->tilemap->actions[cursor->tilemap->curr_action], cursor->tilemap);break;
@@ -245,7 +261,7 @@ void OnToolClick(uint8_t tool_id, Ui *gui, Cursor *cursor) {
 	}
 }
 
-void OnMenuClick(uint8_t menu_id, Ui *gui) {
-	gui->active_menu = menu_id;
+void OnMenuClick(uint8_t dd_id, Ui *gui) {
+	gui->active_dd = dd_id;
 }
 

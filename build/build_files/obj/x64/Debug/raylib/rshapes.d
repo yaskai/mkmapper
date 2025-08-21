@@ -1,7 +1,7 @@
 obj/x64/Debug/raylib/rshapes.o: ../external/raylib-master/src/rshapes.c \
  /usr/include/stdc-predef.h ../external/raylib-master/src/raylib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  ../external/raylib-master/src/config.h \
  ../external/raylib-master/src/rlgl.h /usr/include/math.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
@@ -17,9 +17,9 @@ obj/x64/Debug/raylib/rshapes.o: ../external/raylib-master/src/rshapes.c \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/float.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/float.h \
  /usr/include/stdlib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \
@@ -39,8 +39,8 @@ obj/x64/Debug/raylib/rshapes.o: ../external/raylib-master/src/rshapes.c \
  /usr/include/bits/stdlib-float.h
 /usr/include/stdc-predef.h:
 ../external/raylib-master/src/raylib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h:
 ../external/raylib-master/src/config.h:
 ../external/raylib-master/src/rlgl.h:
 /usr/include/math.h:
@@ -68,9 +68,9 @@ obj/x64/Debug/raylib/rshapes.o: ../external/raylib-master/src/rshapes.c \
 /usr/include/bits/mathcalls.h:
 /usr/include/bits/mathcalls-narrow.h:
 /usr/include/bits/iscanonical.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/float.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/float.h:
 /usr/include/stdlib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 /usr/include/bits/waitflags.h:
 /usr/include/bits/waitstatus.h:
 /usr/include/bits/types/locale_t.h:

@@ -1,8 +1,8 @@
 obj/x64/Debug/raylib/rtextures.o: \
  ../external/raylib-master/src/rtextures.c /usr/include/stdc-predef.h \
  ../external/raylib-master/src/raylib.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  ../external/raylib-master/src/config.h \
  ../external/raylib-master/src/utils.h \
  ../external/raylib-master/src/rlgl.h /usr/include/stdlib.h \
@@ -11,7 +11,7 @@ obj/x64/Debug/raylib/rtextures.o: \
  /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
  /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
@@ -44,20 +44,20 @@ obj/x64/Debug/raylib/rtextures.o: \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h \
  ../external/raylib-master/src/external/stb_image.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h /usr/include/assert.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/emmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mmintrin.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mm_malloc.h \
  ../external/raylib-master/src/external/rl_gputex.h \
  ../external/raylib-master/src/external/qoi.h \
  ../external/raylib-master/src/external/stb_image_write.h \
@@ -66,8 +66,8 @@ obj/x64/Debug/raylib/rtextures.o: \
  ../external/raylib-master/src/external/stb_image_resize2.h
 /usr/include/stdc-predef.h:
 ../external/raylib-master/src/raylib.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h:
 ../external/raylib-master/src/config.h:
 ../external/raylib-master/src/utils.h:
 ../external/raylib-master/src/rlgl.h:
@@ -81,7 +81,7 @@ obj/x64/Debug/raylib/rtextures.o: \
 /usr/include/bits/long-double.h:
 /usr/include/gnu/stubs.h:
 /usr/include/gnu/stubs-64.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
 /usr/include/bits/waitflags.h:
 /usr/include/bits/waitstatus.h:
 /usr/include/bits/floatn.h:
@@ -139,8 +139,8 @@ obj/x64/Debug/raylib/rtextures.o: \
 /usr/include/bits/types/cookie_io_functions_t.h:
 /usr/include/bits/stdio_lim.h:
 ../external/raylib-master/src/external/stb_image.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h:
 /usr/include/limits.h:
 /usr/include/bits/posix1_lim.h:
 /usr/include/bits/local_lim.h:
@@ -150,15 +150,15 @@ obj/x64/Debug/raylib/rtextures.o: \
 /usr/include/bits/xopen_lim.h:
 /usr/include/bits/uio_lim.h:
 /usr/include/assert.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/wchar.h:
 /usr/include/bits/stdint-uintn.h:
 /usr/include/bits/stdint-least.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/emmintrin.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/xmmintrin.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mmintrin.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/mm_malloc.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/emmintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mmintrin.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mm_malloc.h:
 ../external/raylib-master/src/external/rl_gputex.h:
 ../external/raylib-master/src/external/qoi.h:
 ../external/raylib-master/src/external/stb_image_write.h:
