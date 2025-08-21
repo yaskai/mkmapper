@@ -17,6 +17,11 @@
 #include "ui.h"
 #include "cursor.h"
 
+#define GUI_WINDOW_FILE_DIALOG_IMPLEMENTATION
+#include "gui_window_file_dialog.h"
+
+GuiWindowFileDialogState file_diag_state;
+
 void GuiInit(Ui *gui, Config *conf) {
 	GuiLoadStyleJungle();
 
@@ -48,6 +53,8 @@ void GuiInit(Ui *gui, Config *conf) {
 		
 	};
 	memcpy(gui->scrollers, scrollers, sizeof(scrollers));
+
+	file_diag_state = InitGuiWindowFileDialog(GetWorkingDirectory());
 }
 
 void GuiUpdate(Ui *gui, Cursor *cursor) {
@@ -66,9 +73,8 @@ void GuiUpdate(Ui *gui, Cursor *cursor) {
 
 	// Tool buttons
 	for(uint8_t i = 0; i < 5; i++) {
-		if(GuiButton(gui->tool_recs[i], TextFormat("#%d#", gui->tool_icons[i]))) {
+		if(GuiButton(gui->tool_recs[i], TextFormat("#%d#", gui->tool_icons[i]))) 
 			OnToolClick(i, gui, cursor);
-		}
 	}
 
 	// Drowpdown buttons
@@ -79,13 +85,14 @@ void GuiUpdate(Ui *gui, Cursor *cursor) {
 
 		// Show options on active dropdown
 		if(gui->active_dd == i) for(uint8_t n = 1; n < gui->dd_opt_count[i]; n++) {
-			Rectangle btn_rec = (Rectangle){
+			Rectangle btn_rec = (Rectangle) {
 				gui->dd_recs[i].x,
 				gui->dd_recs[i].y + (gui->dd_recs[i].height * (n)),
 				gui->dd_recs[i].width, gui->dd_recs[i].height };
 
-			if(GuiButton(btn_rec, TextFormat("%s", gui->dd_titles[i][n]))) {
-			}
+			// Sub buttons
+			if(GuiButton(btn_rec, TextFormat("%s", gui->dd_titles[i][n])))
+				OnDropdownClick(gui->dd_titles[i][n], gui, cursor);
 		}
 	}
 
@@ -239,7 +246,7 @@ void DropdownsInit(Ui *gui) {
 	};
 
 	memset(gui->dd_opt_count, 0, sizeof(gui->dd_opt_count));
-	for(uint8_t c = 0; c < 3; c++) for(uint8_t r = 0; r < 8; r++) 
+	for(uint8_t c = 0; c < DD_COLS; c++) for(uint8_t r = 0; r < DD_ROWS; r++) 
 		if(*dd_titles[c][r] != '\0') gui->dd_opt_count[c]++;
 
 	memcpy(gui->dd_recs, recs, sizeof(recs));
@@ -261,7 +268,15 @@ void OnToolClick(uint8_t tool_id, Ui *gui, Cursor *cursor) {
 	}
 }
 
-void OnMenuClick(uint8_t dd_id, Ui *gui) {
-	gui->active_dd = dd_id;
+void OnDropdownClick(char *title, Ui *gui, Cursor *cursor) {
+	if(strcmp(title, "open") == 0) {
+		// Open file dialogue
+	} else if(strcmp(title, "save") == 0) {
+		// Write map to file
+	} else if(strcmp(title, "undo") == 0) {
+		UndoAction(&cursor->tilemap->actions[cursor->tilemap->curr_action], cursor->tilemap);
+	} else if(strcmp(title, "redo") == 0) {
+		RedoAction(&cursor->tilemap->actions[cursor->tilemap->curr_action+1], cursor->tilemap);
+	}
 }
 

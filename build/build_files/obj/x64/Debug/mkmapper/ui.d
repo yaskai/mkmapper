@@ -48,7 +48,7 @@ obj/x64/Debug/mkmapper/ui.o: ../../src/ui.c /usr/include/stdc-predef.h \
  ../../src/include/styles/style_cyber.h \
  ../../src/include/styles/style_dark.h \
  ../../src/include/styles/style_ashes.h ../../src/ui.h ../../src/cursor.h \
- ../../src/config.h
+ ../../src/config.h ../../src/gui_window_file_dialog.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/bits/libc-header-start.h:
@@ -138,3 +138,4 @@ obj/x64/Debug/mkmapper/ui.o: ../../src/ui.c /usr/include/stdc-predef.h \
 ../../src/ui.h:
 ../../src/cursor.h:
 ../../src/config.h:
+../../src/gui_window_file_dialog.h:

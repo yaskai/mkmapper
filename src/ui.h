@@ -70,6 +70,6 @@ void ToolsInit(Ui *gui);
 void DropdownsInit(Ui *gui);
 
 void OnToolClick(uint8_t tool_id, Ui *gui, Cursor *cursor);
-void OnMenuClick(uint8_t dd_id, Ui *gui);
+void OnDropdownClick(char *title, Ui *gui, Cursor *cursor);
 
 #endif // !UI_H_
