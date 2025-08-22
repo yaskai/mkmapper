@@ -21,6 +21,7 @@
 #include "gui_window_file_dialog.h"
 
 GuiWindowFileDialogState file_diag_state;
+Rectangle file_diag_bounds;
 
 void GuiInit(Ui *gui, Config *conf) {
 	GuiLoadStyleJungle();
@@ -55,12 +56,15 @@ void GuiInit(Ui *gui, Config *conf) {
 	memcpy(gui->scrollers, scrollers, sizeof(scrollers));
 
 	file_diag_state = InitGuiWindowFileDialog(GetWorkingDirectory());
+	file_diag_bounds = (Rectangle){gui->ww * 0.25f, gui->wh * 0.25f, gui->ww * 0.5f, gui->wh * 0.5f};
+	file_diag_state.windowBounds = file_diag_bounds;
 }
 
 void GuiUpdate(Ui *gui, Cursor *cursor) {
-	gui->flags = 0;
+	if(!file_diag_state.windowActive) gui->flags = 0;
+	else gui->flags = (FILE_DIAG_ACTIVE);
 	cursor->flags &= ~UI_LOCK;
-	
+
 	// Tool panel
 	Camera2D *cam = cursor->camera;	
 	Tilemap *map = cursor->tilemap;	
@@ -100,6 +104,11 @@ void GuiUpdate(Ui *gui, Cursor *cursor) {
 	//DrawRectangleRec(bot_rec, DARKBROWN);
 
 	//ScrollerUpdate(&gui->scrollers[0], gui, cursor);
+
+	if(gui->flags & FILE_DIAG_ACTIVE) {
+		cursor->flags |= UI_LOCK;
+		GuiWindowFileDialog(&file_diag_state);
+	}
 }
 
 void ScrollerUpdate(Scroller *scroller, Ui *gui, Cursor *cursor) {
@@ -240,9 +249,9 @@ void DropdownsInit(Ui *gui) {
 
 	// Dropdown titles
 	char *dd_titles[DD_COLS][DD_ROWS] = {
-		{ "file", "open", "save", "", "", "", "", "" },
-		{ "edit", "undo", "redo", "", "", "", "", "" },
-		{ "help", "", "", "", "", "", "", "" 		 },
+		{ "file", "open", "save", "quit",   "", "", "", "" },
+		{ "edit", "undo", "redo", "resize", "", "", "", "" },
+		{ "help", "", "", "", "", "", "", ""			   },
 	};
 
 	memset(gui->dd_opt_count, 0, sizeof(gui->dd_opt_count));
@@ -271,12 +280,18 @@ void OnToolClick(uint8_t tool_id, Ui *gui, Cursor *cursor) {
 void OnDropdownClick(char *title, Ui *gui, Cursor *cursor) {
 	if(strcmp(title, "open") == 0) {
 		// Open file dialogue
+		file_diag_state.windowActive = true;
+		gui->flags |= FILE_DIAG_ACTIVE;
 	} else if(strcmp(title, "save") == 0) {
 		// Write map to file
 	} else if(strcmp(title, "undo") == 0) {
 		UndoAction(&cursor->tilemap->actions[cursor->tilemap->curr_action], cursor->tilemap);
 	} else if(strcmp(title, "redo") == 0) {
 		RedoAction(&cursor->tilemap->actions[cursor->tilemap->curr_action+1], cursor->tilemap);
+	} else if(strcmp(title, "quit") == 0) {
+		gui->quit_req = true;
+	} else if(strcmp(title, "resize") == 0) {
+
 	}
 }
 

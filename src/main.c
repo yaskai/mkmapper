@@ -7,6 +7,8 @@
 #include "ui.h"
 
 int main() {
+	bool exit_window = false;
+
 	Config conf = (Config){
 		.refresh_rate = 60,
 		.window_width = 1920,
@@ -45,7 +47,9 @@ int main() {
 
 	Spritesheet tile_sheet = SpritesheetCreate(LoadTexture("resources/sorted_tileset01.png"), (Vector2){64, 64});
 
-	while(!WindowShouldClose()) {
+	while(!exit_window) {
+		if(gui.quit_req || WindowShouldClose()) exit_window = true;
+
 		float delta_time = GetFrameTime();
 
 		CursorUpdate(&cursor, delta_time);

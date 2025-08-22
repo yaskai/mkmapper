@@ -6,8 +6,9 @@
 #include "cursor.h"
 #include "config.h"
 
-#define FILE_DIAG 0x01 
-#define SCROLL_X  0x02
+#define FILE_DIAG_ACTIVE 	0x01 
+#define SCROLL_X		  	0x02
+#define SCROLL_Y  			0x04
 
 #define DD_COLS 3 
 #define DD_ROWS 8
@@ -40,6 +41,7 @@ typedef struct {
 
 typedef struct {
 	uint8_t flags, gui_style;
+	bool quit_req;
 
 	float ww, wh;
 
